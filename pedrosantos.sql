@@ -36,7 +36,7 @@ INSERT INTO pacientes(nome_paciente, email_paciente) VALUES
 ('Jyro Watanabe', 'jyro.wata@gmail.com'),
 ('Ryan Souza', 'souza.ryan@gmail.com');
 
-INSERT INTO pacientes(nome_medico, especialidade_medico) VALUES
+INSERT INTO medicos(nome_medico, especialidade_medico) VALUES
 ('Brandon Stark', 'ortopedia'),
 ('Catelyn Stark', 'otorrinolaringologia'),
 ('Sandor Clegane', 'dermatologia'),
@@ -53,9 +53,21 @@ INSERT INTO consultas (id_paciente, id_medico, data_consulta) VALUES
 (4, 1, '2023-07-10'),
 (1, 2, '2025-04-12');
 
-SELECT P.nome_paciente, P.email_paciente, M.nome_medico, C.id_consulta, C.data_consulta 
+SELECT P.nome_paciente, P.email_paciente, M.nome_medico, M.especialidade_medico, C.data_consulta 
 FROM consultas C 
 JOIN pacientes P
 ON C.id_paciente = P.id_paciente
 JOIN medicos M
 ON C.id_medico = M.id_medico;
+
+SELECT P.nome_paciente, P.email_paciente
+FROM pacientes P
+LEFT JOIN consultas C
+ON C.id_paciente = P.id_paciente
+WHERE C.id_consulta IS NULL;
+
+SELECT M.nome_medico, M.especialidade_medico
+FROM medicos M
+LEFT JOIN consultas C
+ON C.id_medico = M.id_medico
+WHERE C.id_consulta IS NULL;
