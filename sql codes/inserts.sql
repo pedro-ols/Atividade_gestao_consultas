@@ -1,3 +1,5 @@
+/*Os inserts foram colocados de uma vez porque eu tinha perdido eles de alguma forma, eles não voltavam nem com ctrl + z, então copiei e colei de um dos meus commits do repositório*/
+
 INSERT INTO pacientes(nome_paciente, email_paciente) VALUES
 ('Carmem Gutierrez', 'c.guterrez@gmail.com'),
 ('Apolo Cavalcante', 'cavalcanteapolo@gmail.com'),
