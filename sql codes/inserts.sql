@@ -12,19 +12,19 @@ INSERT INTO pacientes(nome_paciente, email_paciente) VALUES
 ('Jyro Watanabe', 'jyro.wata@gmail.com'),
 ('Ryan Souza', 'souza.ryan@gmail.com');
 
-INSERT INTO pacientes(nome_medico, especialidade_medico) VALUES
+INSERT INTO medicos(nome_medico, especialidade_medico) VALUES
 ('Brandon Stark', 'ortopedia'),
 ('Catelyn Stark', 'otorrinolaringologia'),
 ('Sandor Clegane', 'dermatologia'),
 ('Aegon Targaryen II', 'dermatologia'),
 ('Varys', 'pediatria');
 
-INSERT INTO consultas (data_consulta) VALUES
-('2024-09-27'),
-('2018-10-27'),
-('2020-12-14'),
-('2025-03-02'),
-('2024-11-05'),
-('2023-07-12'),
-('2023-07-10'),
-('2025-04-12');
+INSERT INTO consultas (id_paciente, id_medico, data_consulta) VALUES
+(1, 3, '2024-09-27'),
+(2, 1, '2018-10-27'),
+(4, 2, '2020-12-14'),
+(1, 3, '2025-03-02'),
+(7, 4, '2024-11-05'),
+(8, 2, '2023-07-12'),
+(4, 1, '2023-07-10'),
+(1, 2, '2025-04-12');
