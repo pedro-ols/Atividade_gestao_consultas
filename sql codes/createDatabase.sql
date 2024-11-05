@@ -1,0 +1,2 @@
+CREATE DATABASE atividade_consultas;
+\c atividade_consultas
